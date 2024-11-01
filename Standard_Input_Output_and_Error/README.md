@@ -113,3 +113,16 @@ This redirects stdout to `output.log` and stderr to `error.log`.
 # Practical Difference Between 2>&1 and 1>&2
 - 2>&1 is typically used when you want both stdout and stderr to go to the same place (e.g., a log file or another command).
 - 1>&2 is used when you want to redirect regular output to the same destination as stderr, *treating regular output as if it were an error*.
+
+
+# Short Hands:
+
+1. `command |& command`
+    - Purpose: Pipes both stdout and stderr from the first command into the second command.
+
+    - Equivalent to: `command 2>&1 | command`, where stderr is merged with stdout, and both are sent through the pipe.
+
+2. `command &> file`
+    - Purpose: Redirects both stdout and stderr to a single file.
+
+    - Equivalent to: `command > file 2>&1`, which sends both output streams (stdout and stderr) to file.
