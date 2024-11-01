@@ -48,8 +48,3 @@ echo
 echo 'host: '
 echo "${HOSTNAME}"
 exit 0
-
-
-
-
-

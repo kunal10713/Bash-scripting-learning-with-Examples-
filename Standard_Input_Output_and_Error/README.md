@@ -22,7 +22,7 @@ Another example of stdin redirection:
 cat < file.txt
 ```
 
-2. Standard Output (stdout)
+# 2. Standard Output (stdout)
 - File Descriptor: `1`
 
 - Description: Standard output (stdout) is the default stream where commands send their output data. By default, stdout writes to the terminal (screen), but it can be redirected to files or other streams.
@@ -40,8 +40,8 @@ echo "This is redirected to a file" > output.txt
 ```
 Here, `> output.txt` redirects stdout to `output.txt`, creating or overwriting the file.
 
-3. Standard Error (stderr)
-- ile Descriptor: `2`
+# 3. Standard Error (stderr)
+- File Descriptor: `2`
 
 - Description: Standard error (stderr) is the stream where commands send error messages or diagnostic information. By default, stderr also writes to the terminal, separate from stdout, but it can be redirected independently.
 
@@ -83,3 +83,33 @@ This redirects stdout to `output.log` and stderr to `error.log`.
 | stdin  | 0               | Keyboard (or file)  | `command < file.txt`       |
 | stdout | 1               | Terminal (screen)   | `command > output.log`     |
 | stderr | 2               | Terminal (screen)   | `command 2> error.log`     |
+
+
+
+
+# Understanding 2>&1 and 1>&2
+1. `2>&1`:
+
+    - Purpose: Redirects stderr (2) to wherever stdout (1) is currently directed.
+    - Usage: command > file 2>&1 redirects both stdout and stderr to file.
+    - Example:
+
+    ```bash
+    ls non_existent_file > output.log 2>&1
+    ```
+    Here, stdout is redirected to output.log first, and then stderr is redirected to the same location as stdout (which is now output.log). This captures both standard output and error messages in the same file.
+
+2. 1>&2:
+
+    - Purpose: Redirects stdout (1) to wherever stderr (2) is currently directed.
+    - Usage: Often used when you want standard output to go to the same place as standard error.
+    - Example:
+    ```bash
+    echo "This is an error message" 1>&2
+    ```
+    Here, stdout (1) is redirected to stderr (2), so the message is treated as an error and can be processed or captured separately from regular output.
+
+
+# Practical Difference Between 2>&1 and 1>&2
+- 2>&1 is typically used when you want both stdout and stderr to go to the same place (e.g., a log file or another command).
+- 1>&2 is used when you want to redirect regular output to the same destination as stderr, *treating regular output as if it were an error*.
