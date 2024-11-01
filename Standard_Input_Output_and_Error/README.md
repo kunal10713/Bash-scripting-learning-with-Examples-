@@ -99,7 +99,7 @@ This redirects stdout to `output.log` and stderr to `error.log`.
     ```
     Here, stdout is redirected to output.log first, and then stderr is redirected to the same location as stdout (which is now output.log). This captures both standard output and error messages in the same file.
 
-2. 1>&2:
+2. `1>&2`:
 
     - Purpose: Redirects stdout (1) to wherever stderr (2) is currently directed.
     - Usage: Often used when you want standard output to go to the same place as standard error.
