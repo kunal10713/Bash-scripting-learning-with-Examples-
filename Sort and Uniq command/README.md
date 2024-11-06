@@ -129,6 +129,22 @@ John
 Bob
 Alice
 ```
+#### Example 5: Sort and Remove Duplicates with -u
+
+The -u option in sort allows you to sort the file and remove any duplicate lines automatically, without needing to use uniq.
+
+File: fruits.txt
+
+```bash
+apple
+banana
+apple
+cherry
+banana
+cherry
+grape
+```
+Command:
 
 * * * * *
 
