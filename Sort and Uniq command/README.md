@@ -78,8 +78,8 @@ Command:
 bash
 
 ```bash
-
-`sort -n numbers.txt`
+sort -n numbers.txt
+```
 
 Output:
 
