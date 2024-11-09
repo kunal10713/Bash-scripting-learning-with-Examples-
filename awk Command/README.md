@@ -145,7 +145,7 @@ Output:
 
 ```bash
 Food            $200.00
-Transport       $ 50.00
+Transport       $50.00
 Entertainment   $100.00
 Rent            $800.00
 Utilities       $150.00
