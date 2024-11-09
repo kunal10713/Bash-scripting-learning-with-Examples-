@@ -40,7 +40,7 @@ Charlie,35,Los Angeles
     Charlie
     ```
 
-2.  To extract the "age" and "city" fields (2nd and 3rd fields) from each line:
+2.  To extract the "age" and "city" fields (2nd and 3rd fields) from each line. Default ouput delimter is ","
 
     ```bash
     cut -d ',' -f 2,3 sample.txt
