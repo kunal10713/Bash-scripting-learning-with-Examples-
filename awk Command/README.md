@@ -109,6 +109,14 @@ Additional Examples
 
 If you have a file `expenses.txt` listing expenses and want to calculate the total of a specific column:
 
+For:
+```bash
+Name:Salary
+Alice:70000
+Bob:55000
+Charlie:60000
+```
+
 ```bash
 awk '{ total += $2 } END { print "Total:", total }' expenses.txt
 ```
