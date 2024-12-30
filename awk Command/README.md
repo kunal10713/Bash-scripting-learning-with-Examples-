@@ -111,9 +111,11 @@ If you have a file `expenses.txt` listing expenses and want to calculate the tot
 
 For:
 ```bash
-Name:Salary
-Alice:70000
-Charlie:60000
+Food 200
+Transport 50
+Entertainment 100
+Rent 800.00
+Utilities 150
 ```
 
 ```bash
