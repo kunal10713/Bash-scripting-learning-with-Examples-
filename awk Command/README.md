@@ -113,7 +113,6 @@ For:
 ```bash
 Name:Salary
 Alice:70000
-Bob:55000
 Charlie:60000
 ```
 
